@@ -1,0 +1,49 @@
+<!-- enlace al template -->
+<input type="text" [(ngModel)]="title">
+{{ title }}
+
+<!-- utilizamos el pipe que creamos -->
+<input type="text" [(ngModel)]="porwer">
+{{ porwer | exponential }}
+
+<!-- con ngIf podemos condicionar elementos en el template -->
+<div *ngIf= "title==='bruno'">
+  este es bruno
+</div>
+
+<div *ngIf= "title==='israel'">
+  este es israel
+</div>
+
+<div *ngIf= "title==='david'">
+  este es david
+</div>
+<!-- puedes remplazar ngif anidados por ngSwitch -->
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'bruno'">este es bruno</p>
+  <p *ngSwitchCase="'israel'">este es israel</p>
+  <p *ngSwitchCase="'david'">este es david</p>
+  <p *ngSwitchDefault>no hay match</p>
+</div>
+
+<!-- ngFor se usa para hacer el recorrido de una array -->
+<button (click)="addItem()">Add item</button>
+<ul>
+  <li *ngIf="items.length===0">
+    la lista esta vacia
+  </li>
+  <li *ngFor="let name of items; index as i">
+    {{ name }}
+    {{ i }}
+    <button (click)="deleteItem(i)">delete item</button>
+  </li>
+</ul>
+
+<!-- renderizacion -->
+<!-- <div class="product-grid">
+  <app-product
+    *ngFor="let product of products"
+    (productClicked)="clickProduct($event)"
+    [product]="product">
+  </app-product>
+</div> -->
