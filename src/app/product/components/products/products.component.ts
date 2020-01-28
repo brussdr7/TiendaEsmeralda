@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // se importa la interfaz Product
-import { Product } from '../product.model';
+import { Product } from './../../../core/models/product.model';
 
 @Component({
   selector: 'app-products',

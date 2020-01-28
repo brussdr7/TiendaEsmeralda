@@ -11,7 +11,7 @@ import {
     DoCheck,
     OnDestroy
 } from '@angular/core';
-import { Product } from '../product.model';
+import { Product } from './../../../core/models/product.model';
 
 // los decoradores se definen con un @ antes de la clase
 @Component({
