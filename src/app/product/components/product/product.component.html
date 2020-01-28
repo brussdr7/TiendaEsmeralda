@@ -5,5 +5,5 @@ los componentes: uppercase, currency, slice, date -->
 <strong>{{product.price | currency}}</strong>
 <p>{{product.description | slice:0:10}}</p>
 <p>{{today | date: 'HH:mm'}}</p>
-<button (click)="addCart()">agregar al carrito</button>
+<button (click)="addCart()" mat-raised-button color="primary">agregar al carrito</button>
 <a [routerLink]="['/products', product.id]">ver detalle</a>
