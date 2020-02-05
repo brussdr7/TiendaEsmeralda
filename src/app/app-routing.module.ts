@@ -36,12 +36,12 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'cart',
-    component: CartComponent
-  },
-  {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: '**',
