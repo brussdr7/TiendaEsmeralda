@@ -18,12 +18,12 @@ export class ProductsService {
   // obtener todos los productos
   getAllProducts() {
     // este get resuelve un array de tipo Product[]
-    return this.http.get<Product[]>(environment.url_api);
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
 
   // metodo para obtener un detalle de articulo en base al id
   getProduct(id: string) {
-    return this.http.get<Product>(`${environment.url_api}/${id}`);
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`);
   }
 
 }
