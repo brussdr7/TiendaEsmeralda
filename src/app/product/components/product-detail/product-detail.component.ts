@@ -33,4 +33,18 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  createProduct() {
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde angular',
+      image: 'assets/images/lacteos.jpeg',
+      price: 4000,
+      description: 'nuevo producto'
+    };
+    this.productsService.createProduct(newProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+  }
+
 }
