@@ -21,6 +21,8 @@ export class ProductsService {
     return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
 
+  // <------------- creacion de crud ------------------>
+
   // metodo para obtener un detalle de articulo en base al id
   getProduct(id: string) {
     return this.http.get<Product>(`${environment.url_api}/products/${id}`);
@@ -30,5 +32,11 @@ export class ProductsService {
   // este metodo contiene la url y el cuerpo en este caso product
   createProduct(product: Product) {
     return this.http.post(`${environment.url_api}/products`, product);
+  }
+
+  // Actulizacion del producto
+  // se recibe el id, ademas solo la parte del producto que se actualizo
+  updateProduct(id: string, changes: Partial<Product>) {
+    return this.http.put(`${environment.url_api}/products/${id}`, changes);
   }
 }
