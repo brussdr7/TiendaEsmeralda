@@ -36,4 +36,7 @@ export class ProductsListComponent implements OnInit {
     });
   }
 
+  addProduct() {
+  }
+
 }
